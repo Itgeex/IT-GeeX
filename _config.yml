@@ -1,1 +1,91 @@
-theme: jekyll-theme-minimal
+# _config.yml - تنظیمات کامل سایت ITGeex با Jekyll
+
+title: ITGeex - تریک‌ها و تجربیات IT
+description: مجموعه تریک‌ها، اسکریپت‌های اتوماسیون، دیباگینگ و تجربیات واقعی از دنیای واقعی IT
+email: itgeexx@gmail.com
+baseurl: "" # اگر سایتت روی زیرپوشه بود اینجا بنویس، در غیر این صورت خالی بمونه
+url: "https://itgeex.github.io" # آدرس دقیق GitHub Pages خودت رو اینجا بنویس (یا اسم کاربریت رو جایگزین کن)
+
+# تنظیمات ظاهری
+theme: minima
+# یا اگر از تم دیگه‌ای مثل jekyll-theme-cayman یا chirpy استفاده می‌کنی، اینجا عوض کن
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# تنظیمات پیش‌فرض برای همه پست‌ها
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      author: "ITGeex"
+
+# === مجموعه‌ها (Collections) - دسته‌بندی‌های اصلی سایت ===
+collections:
+  automation_scripts:
+    output: true
+    permalink: /automation-scripts/:title/
+  debugging_techniques:
+    output: true
+    permalink: /debugging-techniques/:title/
+  best_practices:
+    output: true
+    permalink: /best-practices/:title/
+  devops_cicd:
+    output: true
+    permalink: /devops-cicd/:title/
+  security_tricks:
+    output: true
+    permalink: /security-tricks/:title/
+  performance_optimization:
+    output: true
+    permalink: /performance-optimization/:title/
+  tools_recommendations:
+    output: true
+    permalink: /tools-recommendations/:title/
+  work_experiences:
+    output: true
+    permalink: /work-experiences/:title/
+  cloud_computing:
+    output: true
+    true
+    permalink: /cloud-computing/:title/
+  miscellaneous:
+    output: true
+    permalink: /miscellaneous/:title/
+
+# تنظیمات اضافی برای مرتب‌سازی و نمایش
+collections_dir: collections
+
+# برای اینکه صفحه‌ی اصلی هر دسته هم نمایش داده بشه
+defaults:
+  - scope:
+      path: ""
+      type: automation_scripts
+    values:
+      layout: post
+      category: "اتوماسیون"
+  - scope:
+      path: ""
+      type: debugging_techniques
+    values:
+      layout: post
+      category: "دیباگینگ"
+  - scope:
+      # همین کار رو برای بقیه دسته‌ها هم می‌تونی تکرار کنی (اختیاری)
+
+# برای زیبایی URLها
+permalink: pretty
+
+# حذف فایل‌های اضافی از خروجی
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - LICENSE
